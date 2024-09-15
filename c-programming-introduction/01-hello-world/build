@@ -1,0 +1,26 @@
+#!/usr/bin/bash 
+
+rm -rf ./bin
+mkdir bin
+
+# compiler
+cmd=gcc
+
+# enable all warnings
+cmd="${cmd} -Wall"
+
+# enable C standard and strict
+cmd="${cmd} -std=c99 -pedantic"
+
+# define source file as main.c
+cmd="${cmd} main.c"
+
+# add output file
+cmd="${cmd} -o ./bin/main"
+
+printf "building \n\t ${cmd}\n"
+eval $cmd
+
+echo "executing bin/main"
+
+eval "./bin/main"
