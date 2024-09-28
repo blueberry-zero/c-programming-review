@@ -12,3 +12,15 @@ eval $cmd
 echo "executing bin/main"
 
 eval "./bin/main"
+
+if [ -f "./exercises.c"]; then
+    printf "building \n\t ${cmd}\n"
+    
+    cmd="gcc -Wall -std=c99 -pedantic -o ./bin/exercises exercises.c"
+
+    eval $cmd
+
+    echo "executing bin/exercises"
+
+    eval "./bin/exercises"
+fi
